@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 class Stocks extends Component {
   render() {
-    console.log(this.props.quotes);
     return (
       <table>
         <tbody>
