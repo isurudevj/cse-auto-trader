@@ -12,7 +12,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/cse-autotrader");
+        registry.addEndpoint("/cse-autotrader")
+                .setAllowedOriginPatterns("*");
     }
 
     @Override

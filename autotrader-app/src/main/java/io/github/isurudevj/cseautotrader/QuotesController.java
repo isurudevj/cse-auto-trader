@@ -3,10 +3,12 @@ package io.github.isurudevj.cseautotrader;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Arrays;
 
 @Controller
+@CrossOrigin(origins = {"*"})
 public class QuotesController {
 
     @MessageMapping("/quotes")

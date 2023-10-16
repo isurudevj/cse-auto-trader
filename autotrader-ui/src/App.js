@@ -1,18 +1,22 @@
 import "./App.css";
-import { Provider } from "react-redux";
-import configureStore from "./store/configureStore";
 import Stocks from "./components/Stocks";
 import React from "react";
+import { Stomp } from "@stomp/stompjs";
 
-const store = configureStore();
+let url = "ws://localhost:2134/cse-autotrader";
+let client = Stomp.client(url);
 
 class App extends React.Component {
+  componentDidMount() {
+    client.connect({}, (frame) => {
+      console.log(frame);
+    });
+  }
+
+  componentWillUnmount() {}
+
   render() {
-    return (
-      <Provider store={store}>
-        <Stocks></Stocks>
-      </Provider>
-    );
+    return <Stocks></Stocks>;
   }
 }
 
