@@ -12,8 +12,8 @@ class Stocks extends Component {
             <th>Ask</th>
           </tr>
           {this.props.quotes.map((quote) => (
-            <tr key={quote.id}>
-              <td>{quote.id}</td>
+            <tr key={quote.symbol}>
+              <td>{quote.symbol}</td>
               <td>{quote.bid}</td>
               <td>{quote.ask}</td>
             </tr>

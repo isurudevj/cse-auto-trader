@@ -1,6 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./reducers";
+import stocks from "./stocks";
 
 export default function configure() {
-  return configureStore({ reducer });
+  return configureStore({
+    reducer: {
+      stocks,
+    },
+  });
 }
