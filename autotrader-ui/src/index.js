@@ -5,6 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const store = configureStore();
 
@@ -12,7 +16,14 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Container>
+        <Row>
+          <Col>
+            <App />
+          </Col>
+          <Col></Col>
+        </Row>
+      </Container>
     </Provider>
   </React.StrictMode>
 );

@@ -1,25 +1,26 @@
 import { Component } from "react";
 import { connect } from "react-redux";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 class Stocks extends Component {
   render() {
     return (
-      <table>
-        <tbody>
-          <tr>
-            <th>Stock</th>
-            <th>Bid</th>
-            <th>Ask</th>
-          </tr>
-          {this.props.quotes.map((quote) => (
-            <tr key={quote.symbol}>
-              <td>{quote.symbol}</td>
-              <td>{quote.bid}</td>
-              <td>{quote.ask}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Row>
+        <hr></hr>
+        <Row>
+          <Col>Stock</Col>
+          <Col>Bid</Col>
+          <Col>Ask</Col>
+        </Row>
+        {this.props.quotes.map((quote) => (
+          <Row key={quote.symbol}>
+            <Col>{quote.symbol}</Col>
+            <Col>{quote.bid}</Col>
+            <Col>{quote.ask}</Col>
+          </Row>
+        ))}
+      </Row>
     );
   }
 }
