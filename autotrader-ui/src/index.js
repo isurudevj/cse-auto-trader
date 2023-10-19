@@ -7,8 +7,6 @@ import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 const store = configureStore();
 
@@ -17,12 +15,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Container>
-        <Row>
-          <Col>
-            <App />
-          </Col>
-          <Col></Col>
-        </Row>
+        <App />
       </Container>
     </Provider>
   </React.StrictMode>

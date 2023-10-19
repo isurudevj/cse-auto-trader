@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { stocksUpdated } from "./store//stocks";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import MakeTrade from "./components/MakeTrade";
+import PlaceHolder from "./components/PlaceHolder";
 
 let url = "ws://localhost:2134/cse-autotrader";
 let client = Stomp.client(url);
@@ -36,7 +36,11 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="stocks" element={<Stocks />}></Route>
-            <Route path="make-trade" element={<MakeTrade />}></Route>
+            <Route
+              path="make-trade"
+              element={<PlaceHolder title="Make Trade" />}
+            ></Route>
+            <Route path="pnl" element={<PlaceHolder title="PNL" />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
