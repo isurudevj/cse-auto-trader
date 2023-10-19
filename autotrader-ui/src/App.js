@@ -4,6 +4,9 @@ import React from "react";
 import { Stomp } from "@stomp/stompjs";
 import { connect } from "react-redux";
 import { stocksUpdated } from "./store//stocks";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import MakeTrade from "./components/MakeTrade";
 
 let url = "ws://localhost:2134/cse-autotrader";
 let client = Stomp.client(url);
@@ -28,7 +31,16 @@ class App extends React.Component {
   }
 
   render() {
-    return <Stocks></Stocks>;
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="stocks" element={<Stocks />}></Route>
+            <Route path="make-trade" element={<MakeTrade />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    );
   }
 }
 
